@@ -96,3 +96,32 @@ public class DiscoveryServiceApplication {
 - ``spring-cloud-dependencies``: This dependency is used to manage the version of the spring cloud dependencies.
 - ``spring-boot-maven-plugin``: This plugin is used to build the application.
 - ``spring-boot-starter-test``: This dependency is used to enable the test in the application.
+
+<br/>
+
+-----------
+
+<br/>
+
+
+```yaml
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discoveryService
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    response-cache-auto-expiration-in-seconds: 1000
+```
+
+- ``server.port``: This property is used to set the port of the application.
+- ``spring.application.name``: This property is used to set the name of the application.
+- ``eureka.client.register-with-eureka``: This property is used to set the register with eureka.
+- ``eureka.client.fetch-registry``: This property is used to set the fetch registry.
+- ``eureka.server.response-cache-auto-expiration-in-seconds``: This property is used to set the response cache auto expiration in seconds.

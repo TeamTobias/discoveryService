@@ -1,7 +1,13 @@
 server:
   port: 8761
 
+spring:
+  application:
+    name: discoveryService
+
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+  server:
+    response-cache-auto-expiration-in-seconds: 1000
