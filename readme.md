@@ -1,3 +1,4 @@
+```java
 package com.example.discoveryservice;
 
 import org.springframework.boot.SpringApplication;
@@ -13,3 +14,16 @@ public class DiscoveryServiceApplication {
     }
 
 }
+```
+
+- ``@SpringBootApplication``: This annotation is used to enable the auto-configuration of the application.
+- ``@EnableEurekaServer``: This annotation is used to enable the Eureka server in the application.
+
+
+
+<br/>
+
+-------
+
+<br/>
+
