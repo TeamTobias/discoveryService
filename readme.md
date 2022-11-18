@@ -1,3 +1,33 @@
+```java
+package com.example.discoveryservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+@SpringBootApplication
+@EnableEurekaServer
+public class DiscoveryServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DiscoveryServiceApplication.class, args);
+    }
+
+}
+```
+
+- ``@SpringBootApplication``: This annotation is used to enable the auto-configuration of the application.
+- ``@EnableEurekaServer``: This annotation is used to enable the Eureka server in the application.
+
+
+
+<br/>
+
+-------
+
+<br/>
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -14,6 +44,7 @@
     <name>discoveryService</name>
     <description>discoveryService</description>
     <properties>
+        <java.version>17</java.version>
         <spring-cloud.version>2021.0.5</spring-cloud.version>
     </properties>
     <dependencies>
@@ -58,3 +89,39 @@
     </build>
 
 </project>
+```
+
+- ``spring-cloud-starter-netflix-eureka-server``: This dependency is used to enable the Eureka server in the application.
+- ``spring-cloud-starter-bootstrap``: This dependency is used to enable the bootstrap configuration in the application.
+- ``spring-cloud-dependencies``: This dependency is used to manage the version of the spring cloud dependencies.
+- ``spring-boot-maven-plugin``: This plugin is used to build the application.
+- ``spring-boot-starter-test``: This dependency is used to enable the test in the application.
+
+<br/>
+
+-----------
+
+<br/>
+
+
+```yaml
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discoveryService
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    response-cache-auto-expiration-in-seconds: 1000
+```
+
+- ``server.port``: This property is used to set the port of the application.
+- ``spring.application.name``: This property is used to set the name of the application.
+- ``eureka.client.register-with-eureka``: This property is used to set the register with eureka.
+- ``eureka.client.fetch-registry``: This property is used to set the fetch registry.
+- ``eureka.server.response-cache-auto-expiration-in-seconds``: This property is used to set the response cache auto expiration in seconds.
