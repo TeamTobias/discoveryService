@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   comdockerdevenvironments:
-    image: comdockerdevenvironments
+    image: discoveryservice
     build:
       context: .
       dockerfile: ./Dockerfile
