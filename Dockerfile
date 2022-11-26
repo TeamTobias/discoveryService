@@ -5,5 +5,5 @@ ENV JAVA_OPTS=$JAVA_OPTS
 COPY target/discoveryService-0.0.1-SNAPSHOT.jar discoveryservice.jar
 EXPOSE 8761
 #ENTRYPOINT exec java $JAVA_OPTS -jar discoveryservice.jar
-# For Spring-Boot project, use the entrypoint below to reduce Tomcat t startup time.
+# For Spring-Boot project, use the entrypoint below to reduce Tomcat startup time.
 ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar discoveryservice.jar
