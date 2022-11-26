@@ -11,3 +11,10 @@ eureka:
     fetch-registry: false
   server:
     response-cache-auto-expiration-in-seconds: 1000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
